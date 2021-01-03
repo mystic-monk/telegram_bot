@@ -8,7 +8,6 @@ mccabe==0.6.1
 pycodestyle==2.6.0
 pycparser==2.20
 pyflakes==2.2.0
-python-box==5.2.0
 python-telegram-bot==13.1
 pytz==2020.5
 PyYAML==5.3.1

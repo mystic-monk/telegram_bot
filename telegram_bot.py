@@ -1,12 +1,11 @@
 import sys
 import os
-import yaml
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 # from telegram import File
 import logging
-logging.basicConfig(level=logging.DEBUG,
+logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-
+logger = logging.getLogger()
 # Getting mode, so we could define run function for local and Heroku setup
 mode = os.getenv("MODE")
 TOKEN = os.getenv("TOKEN")
@@ -61,6 +60,8 @@ def command_handler(update, context):
 def main():
     ## start the bot 
     # updater = Updater("1282480963:AAG_ccZe7yFTCP3nU0LotCeguYBdvA8nnBI", use_context=True)
+    logger.info("Starting bot")
+    updater = Updater(TOKEN)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
     # dp.add_handler(MessageHandler(Filters.text, message))
